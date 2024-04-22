@@ -133,42 +133,65 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     text-align: center;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     nav {
-        padding: 1.5rem 1rem; /* Reduz o padding para telas menores */
+        padding: 1.5rem 1rem;
     }
 
     .menu {
-        position: absolute;
-        top: 100%; /* Mostra o menu verticalmente */
-        right: 0;
-        background: #1f1517; /* Fundo do menu para corresponder ao fundo do corpo */
-        border: none; /* Remove a borda do menu */
-        width: 100%; /* Ocupa a largura total da tela */
-        text-align: center; /* Centraliza os itens do menu */
-        display: none; /* Esconde o menu por padrão */
+        display: none;
     }
 
     .menu li {
-        border: none; /* Remove a borda entre os itens do menu */
-        display: block; /* Altera para o layout de bloco */
+        border: none; 
+        display: block;
     }
 
     .menu li a {
-        padding: 1rem 0; /* Espaçamento entre os itens do menu */
+        padding: 1rem 0; 
     }
 
     .menu li ul {
-        position: static; /* Remove a posição absoluta */
-        background-color: transparent; /* Deixa o submenu transparente */
-        display: none; /* Esconde o submenu */
+        position: static; 
+        background-color: transparent; 
+        display: none; 
     }
 
     .menu li:hover ul, .menu li.over ul {
-        display: none; /* Esconde o submenu */
+        display: none; 
     }
 
     .menu-toggle {
-        display: block; /* Mostra o botão de toggle */
+        display: block;
+        background-color: transparent;
+        color: aliceblue;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    .menu-toggle:focus, .menu-toggle:hover {
+        outline: none;
+    }
+
+    .menu.active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #1f1517;
+        width: 100%;
+        z-index: 1;
+        border-top: 1px solid #363636;
+    }
+
+    .menu.active li {
+        border: none;
     }
 }
