@@ -9,6 +9,8 @@
 body {
     background: #1f1517;
     color: floralwhite;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
 }
 
 html {
@@ -23,9 +25,8 @@ a {
 nav {
     max-width: 1120px;
     margin: auto;
-    padding: 1.5rem 10rem;
+    padding: 1.5rem 2rem;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -45,19 +46,17 @@ nav {
 .menu {
     list-style: none;
     border: 1px solid #363636;
-    float: right;
 }
 
 .menu li {
     position: relative;
-    float: right;
     border-right: 1px solid #363636;
 }
 
 .menu li a {
     color: aliceblue;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     display: block;
 }
 
@@ -71,10 +70,11 @@ nav {
 
 .menu li ul {
     position: absolute;
-    top: 25px;
+    top: 100%;
     right: 0;
     background-color: aliceblue;
     display:none;
+    z-index: 1;
 }
 
 .menu li:hover ul, .menu li.over ul {
@@ -83,7 +83,6 @@ nav {
 
 .menu li ul li {
     border: 1px solid #c0c0c0;
-    display: block;
     width: 150px;
 }
 
@@ -132,4 +131,44 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     line-height: 1.5;
     color: aliceblue;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 1.5rem 1rem; /* Reduz o padding para telas menores */
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%; /* Mostra o menu verticalmente */
+        right: 0;
+        background: #1f1517; /* Fundo do menu para corresponder ao fundo do corpo */
+        border: none; /* Remove a borda do menu */
+        width: 100%; /* Ocupa a largura total da tela */
+        text-align: center; /* Centraliza os itens do menu */
+        display: none; /* Esconde o menu por padrão */
+    }
+
+    .menu li {
+        border: none; /* Remove a borda entre os itens do menu */
+        display: block; /* Altera para o layout de bloco */
+    }
+
+    .menu li a {
+        padding: 1rem 0; /* Espaçamento entre os itens do menu */
+    }
+
+    .menu li ul {
+        position: static; /* Remove a posição absoluta */
+        background-color: transparent; /* Deixa o submenu transparente */
+        display: none; /* Esconde o submenu */
+    }
+
+    .menu li:hover ul, .menu li.over ul {
+        display: none; /* Esconde o submenu */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão de toggle */
+    }
 }
