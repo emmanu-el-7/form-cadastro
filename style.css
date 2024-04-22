@@ -144,6 +144,10 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 }
 
 @media screen and (max-width: 768px) {
+    .register > h2 {
+        font-size: 3vh;
+    }
+
     .menu-toggle:checked + .menu-icon {
         display: block;
     }
