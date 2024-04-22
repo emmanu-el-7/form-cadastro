@@ -137,61 +137,31 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     display: none;
 }
 
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
-    nav {
-        padding: 1.5rem 1rem;
+    .menu-toggle:checked + .menu-icon {
+        display: block;
     }
 
     .menu {
         display: none;
-    }
-
-    .menu li {
-        border: none; 
-        display: block;
-    }
-
-    .menu li a {
-        padding: 1rem 0; 
-    }
-
-    .menu li ul {
-        position: static; 
-        background-color: transparent; 
-        display: none; 
-    }
-
-    .menu li:hover ul, .menu li.over ul {
-        display: none; 
-    }
-
-    .menu-toggle {
-        display: block;
-        background-color: transparent;
-        color: aliceblue;
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-        margin-right: 1rem;
-    }
-
-    .menu-toggle:focus, .menu-toggle:hover {
-        outline: none;
-    }
-
-    .menu.active{
-        display: flex;
-        flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0;
         background: #1f1517;
         width: 100%;
-        z-index: 1;
-        border-top: 1px solid #363636;
     }
 
-    .menu.active li {
-        border: none;
+    .menu li {
+        border-bottom: 1px solid #363636;
+    }
+
+    .menu-toggle:checked + .menu-icon + .menu {
+        display: block;
     }
 }
