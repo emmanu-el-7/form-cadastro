@@ -43,49 +43,6 @@ nav {
     text-transform: uppercase;
 }
 
-.menu {
-    list-style: none;
-    border: 1px solid #363636;
-}
-
-.menu li {
-    position: relative;
-    border-right: 1px solid #363636;
-}
-
-.menu li a {
-    color: aliceblue;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
-}
-
-.menu li a:hover {
-    background: 381b04;
-    color: aliceblue;
-    -moz-box-shadow: 0 3px 10px 0 #CCC;
-    -webkit-box-shadow: 0 3px 10px 0 #ccc;
-    text-shadow: 0px 0px 5px #fff;
-}
-
-.menu li ul {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: aliceblue;
-    display:none;
-    z-index: 1;
-}
-
-.menu li:hover ul, .menu li.over ul {
-    display: block;
-}
-
-.menu li ul li {
-    border: 1px solid #c0c0c0;
-    width: 150px;
-}
-
 .register {
     border: 1px solid #363636;
     background-color: #000;
@@ -133,16 +90,6 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
     text-align: center;
 }
 
-.menu-toggle {
-    display: none;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
 @media screen and (max-width: 800px) {
     input[type="text"], input[type="email"], input[type="password"] {
         font-size: 0.9rem;
@@ -154,26 +101,5 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 
     .register > h2 {
         font-size: 3vh;
-    }
-
-    .menu-toggle:checked + .menu-icon {
-        display: block;
-    }
-
-    .menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #1f1517;
-        width: 100%;
-    }
-
-    .menu li {
-        border-bottom: 1px solid #363636;
-    }
-
-    .menu-toggle:checked + .menu-icon + .menu {
-        display: block;
     }
 }
